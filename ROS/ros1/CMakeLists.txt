@@ -88,6 +88,10 @@ add_dependencies(inertial_sense_ros inertial_sense_ros_generate_messages_cpp)
 add_executable(inertial_sense_node shared/src/inertial_sense_node.cpp)
 target_link_libraries(inertial_sense_node inertial_sense_ros ${catkin_LIBRARIES})
 
+
+add_executable(broadcast_imu_gps shared/src/broadcast_imu_gps.cpp)
+target_link_libraries(broadcast_imu_gps inertial_sense_ros ${catkin_LIBRARIES})
+
 catkin_add_gtest(test_unit_tests test/test_basic_unit_tests.cpp)
 target_link_libraries(test_unit_tests ${PROJECT_NAME})
 
